@@ -1,3 +1,6 @@
+https://cryzaqgk.github.io/mesto-ad/
+https://github.com/cryzaqgk/mesto-ad/
+
 Стартовый набор для выполнения проектной работы Место
 
 Для запуска приложения необходимо использовать live-server
