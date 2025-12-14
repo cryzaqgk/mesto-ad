@@ -44,28 +44,51 @@
         <div class="popup__content">
           <button type="button" class="popup__close"></button>
           <h3 class="popup__title">Редактировать профиль</h3>
-          <form class="popup__form" name="edit-profile">
+          <form class="popup__form" name="edit-profile" novalidate> <!-- novalidate отключает встроенную валидацию формы -->
             <label class="popup__label">
+              <!-- required делает поле обязательным для заполнения -->
+              <!-- minlength устанавливает минимальное количество символов -->
+              <!-- maxlength устанавливает максимальное количество символов -->
+              <!-- pattern - регулярка для валидации -->
+              <!-- data-error-message - кастомное сообщение об ошике -->
               <input
                 type="text"
                 name="user-name"
                 id="user-name"
                 class="popup__input popup__input_type_name"
+                required 
+                minlength="2" 
+                maxlength="40" 
+                pattern="^[A-Za-zА-Яа-яЁё\s-]+$" 
+                data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы" 
                 placeholder="Имя"
               />
+              <span class="popup__error" id="user-name-error"></span> <!-- span для вывода ошибки -->
             </label>
             <label class="popup__label">
+              <!-- required делает поле обязательным для заполнения -->
+              <!-- minlength устанавливает минимальное количество символов -->
+              <!-- maxlength устанавливает максимальное количество символов -->
+              <!-- pattern устанавливает шаблон для валидации -->
+              <!-- data-error-message устанавливает кастомное сообщение об ошибке -->
+              <!-- placeholder устанавливает текст placeholder -->
               <input
                 type="text"
                 name="user-description"
                 id="user-description"
                 class="popup__input popup__input_type_description"
+                required 
+                minlength="2" 
+                maxlength="200" 
                 placeholder="Занятие"
               />
+              <span class="popup__error" id="user-description-error"></span> <!-- span для вывода ошибки -->
             </label>
+            <!-- disabled указывает, что кнопка не активна -->
             <button
               type="submit"
-              class="button popup__button"
+              class="button popup__button popup__button_disabled"
+              disabled
             >
               Сохранить
             </button>
@@ -77,28 +100,44 @@
         <div class="popup__content">
           <button type="button" class="popup__close"></button>
           <h3 class="popup__title">Новое место</h3>
-          <form class="popup__form" name="new-place">
+          <!-- novalidate отключает встроенную валидацию формы -->
+          <form class="popup__form" name="new-place" novalidate>
             <label class="popup__label">
+              <!-- required делает поле обязательным для заполнения -->
+              <!-- minlength устанавливает минимальное количество символов -->
+              <!-- maxlength устанавливает максимальное количество символов -->
+              <!-- pattern устанавливает шаблон для валидации -->
+              <!-- data-error-message устанавливает кастомное сообщение об ошибке -->
               <input
                 type="text"
                 name="place-name"
                 id="place-name"
                 class="popup__input popup__input_type_card-name"
+                required
+                minlength="2"
+                maxlength="30"
+                pattern="^[A-Za-zА-Яа-яЁё\s-]+$"
+                data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
                 placeholder="Название"
               />
+              <span class="popup__error" id="place-name-error"></span> <!-- span для вывода ошибки -->
             </label>
             <label class="popup__label">
+              <!-- required делает поле обязательным для заполнения -->
               <input
                 type="url"
                 name="place-link"
                 id="place-link"
                 class="popup__input popup__input_type_url"
+                required
                 placeholder="Ссылка на картинку"
               />
+              <span class="popup__error" id="place-link-error"></span> <!-- span для вывода ошибки -->
             </label>
             <button
               type="submit"
-              class="button popup__button"
+              class="button popup__button popup__button_disabled"
+              disabled
             >
               Создать
             </button>
@@ -133,19 +172,23 @@
         <div class="popup__content">
           <button type="button" class="popup__close"></button>
           <h3 class="popup__title">Обновить аватар</h3>
-          <form class="popup__form" name="edit-avatar">
+          <form class="popup__form" name="edit-avatar" novalidate> <!-- novalidate отключает встроенную валидацию формы -->
             <label class="popup__label">
+              <!-- required делает поле обязательным для заполнения -->
               <input
                 type="url"
                 name="user-avatar"
                 id="user-avatar"
                 class="popup__input popup__input_type_avatar"
+                required
                 placeholder="Ссылка на изображение"
               />
             </label>
+            <span class="popup__error" id="user-avatar-error"></span> <!-- span для вывода ошибки -->
             <button
               type="submit"
-              class="button popup__button"
+              class="button popup__button popup__button_disabled"
+              disabled
             >
               Сохранить
             </button>
