@@ -74,9 +74,7 @@ export const clearValidation = (formElement, settings) => {
   inputList.forEach((inputElement) => {
     hideInputError(formElement, inputElement, settings);
   });
-  if (buttonElement) {
     disableSubmitButton(buttonElement, settings);
-  }
 };
 
 // Включить валидацию на всех формах по селектору
